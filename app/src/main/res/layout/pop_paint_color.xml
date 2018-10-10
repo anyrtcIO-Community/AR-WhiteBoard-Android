@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:background="@drawable/shape_board_tool_bg"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingRight="24dp"
+    android:paddingLeft="24dp"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/ib_red"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:onClick="btnOnclick"
+        android:background="@null"
+        android:src="@drawable/img_red"/>
+    <ImageButton
+        android:id="@+id/ib_green"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:onClick="btnOnclick"
+        android:background="@null"
+        android:src="@drawable/img_green"/>
+    <ImageButton
+        android:id="@+id/ib_blue"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:onClick="btnOnclick"
+        android:background="@null"
+        android:src="@drawable/img_blue"/>
+
+
+    <ImageButton
+        android:id="@+id/ib_black"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:onClick="btnOnclick"
+        android:background="@null"
+        android:src="@drawable/img_black"/>
+
+    <ImageButton
+        android:id="@+id/ib_white"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:onClick="btnOnclick"
+        android:background="@null"
+        android:src="@drawable/img_white"/>
+
+</LinearLayout>

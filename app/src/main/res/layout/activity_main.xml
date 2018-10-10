@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".MainActivity">
+
+   <Space
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/et_roomId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:hint="请输入房间号"
+            android:gravity="center"
+            android:singleLine="true"
+            android:inputType="number"
+            android:minEms="8"
+            android:textColorHint="#FFFFFF"
+            android:background="@null"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"></View>
+
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_white_focus"
+            android:text="加入画板"/>
+
+        <Button
+            android:id="@+id/btn_creat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/shape_white_focus"
+            android:layout_marginRight="12dp"
+            android:text="创建画板"/>
+
+    </LinearLayout>
+
+</LinearLayout>
