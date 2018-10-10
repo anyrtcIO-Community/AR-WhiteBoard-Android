@@ -103,6 +103,11 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
     }
 
     @Override
+    public void onBoardDrawsChangeTimestamp(long timestamp) {
+
+    }
+
+    @Override
     public void onBoardDestroy() {
 
     }

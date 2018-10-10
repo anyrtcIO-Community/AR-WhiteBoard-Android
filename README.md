@@ -11,7 +11,7 @@
 
 ```
 dependencies {
-    compile  'org.anyrtc:WhiteBoard:2.0.8'
+    compile  'org.anyrtc:WhiteBoard:2.1.0'
 }
 ```
 
