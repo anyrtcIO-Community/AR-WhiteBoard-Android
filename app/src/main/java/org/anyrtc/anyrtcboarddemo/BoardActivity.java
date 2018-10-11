@@ -48,15 +48,19 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
         ib_rect=findViewById(R.id.ib_rect);
         ib_line=findViewById(R.id.ib_line);
         tv_pageNum=findViewById(R.id.tv_pageNum);
+
+        //设置画板监听回调
         anyRTCBoardView.setWhiteBoardListener(this);
+        //设置图片加载器
         anyRTCBoardView.setImageLoader(new BoardmageLoader());
         List<String> imageList=new ArrayList<>();
         for (int i=1;i<28;i++){
             imageList.add(String.format(Constans.IMAGE1,i+""));
         }
+        //初始化画板
         anyRTCBoardView.initWithRoomId(roomId, "88888888",isHost ? String.valueOf((Math.random()*9+1)*100000) : String.valueOf((Math.random()*9+1)*100000),imageList);
-
-        AnyRTCBoardConfig.getInstance().setSwipe(true);//设置可滑动
+        //设置画笔类型
+        AnyRTCBoardConfig.getInstance().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync :AnyRTCBoardConfig.BrushModel.Transform);
     }
 
     @Override
@@ -160,7 +164,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 if (ll_tools.getVisibility()==View.VISIBLE){
                     ll_tools.setVisibility(View.GONE);
                     ibtnTools.setSelected(false);
-                    AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.None);
+                    AnyRTCBoardConfig.getInstance().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync :AnyRTCBoardConfig.BrushModel.Transform);
                 }else {
                     ll_tools.setVisibility(View.VISIBLE);
                     ibtnTools.setSelected(true);
