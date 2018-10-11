@@ -8,10 +8,16 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
-   <Space
+   <FrameLayout
        android:layout_width="match_parent"
        android:layout_height="0dp"
-       android:layout_weight="1"/>
+       android:layout_weight="1">
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/img_logo"
+           android:layout_gravity="center"/>
+   </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -25,11 +31,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:hint="请输入房间号"
+            android:hint="请输入6位画板ID"
             android:gravity="center"
             android:singleLine="true"
+            android:textSize="12sp"
             android:inputType="number"
-            android:minEms="8"
+            android:maxLength="6"
             android:textColorHint="#FFFFFF"
             android:background="@null"/>
         <View

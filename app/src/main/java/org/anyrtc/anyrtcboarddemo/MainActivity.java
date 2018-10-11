@@ -23,7 +23,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (etRoom.getText().toString().trim().isEmpty()){
-                    Toast.makeText(MainActivity.this,"请输入房间号",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"请输入6位画板ID",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (etRoom.getText().toString().trim().length()<6){
+                    Toast.makeText(MainActivity.this,"请输入6位画板ID",Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 Intent i=new Intent(MainActivity.this,BoardActivity.class);
                 i.putExtra("roomId",etRoom.getText().toString());
@@ -35,7 +40,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (etRoom.getText().toString().trim().isEmpty()){
-                    Toast.makeText(MainActivity.this,"请输入房间号",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"请输入6位画板ID",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (etRoom.getText().toString().trim().length()<6){
+                    Toast.makeText(MainActivity.this,"请输入6位画板ID",Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 Intent i=new Intent(MainActivity.this,BoardActivity.class);
                 i.putExtra("roomId",etRoom.getText().toString());

@@ -10,21 +10,21 @@
 
     <ImageButton
         android:id="@+id/ib_width_a"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:background="@null"
         android:onClick="btnOnclick"
         android:src="@drawable/img_paint_width_a"/>
     <ImageButton
         android:id="@+id/ib_width_b"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:background="@null"
         android:onClick="btnOnclick"
         android:src="@drawable/img_paint_width_b"/>
     <ImageButton
         android:id="@+id/ib_width_c"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:background="@null"
         android:onClick="btnOnclick"

@@ -10,21 +10,21 @@
 
     <ImageButton
         android:id="@+id/ib_red"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:onClick="btnOnclick"
         android:background="@null"
         android:src="@drawable/img_red"/>
     <ImageButton
         android:id="@+id/ib_green"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:onClick="btnOnclick"
         android:background="@null"
         android:src="@drawable/img_green"/>
     <ImageButton
         android:id="@+id/ib_blue"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:onClick="btnOnclick"
         android:background="@null"
@@ -33,18 +33,11 @@
 
     <ImageButton
         android:id="@+id/ib_black"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:onClick="btnOnclick"
         android:background="@null"
         android:src="@drawable/img_black"/>
 
-    <ImageButton
-        android:id="@+id/ib_white"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:onClick="btnOnclick"
-        android:background="@null"
-        android:src="@drawable/img_white"/>
 
 </LinearLayout>

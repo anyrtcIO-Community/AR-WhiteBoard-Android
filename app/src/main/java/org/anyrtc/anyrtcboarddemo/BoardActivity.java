@@ -25,6 +25,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
     TextView tvPaint,tvColor,tvLineWidth,tv_pageNum;
     LinearLayout ll_tools,popColor,popWidth,popModel;
     ImageButton ib_paint,ib_line,ib_rect,ib_arrow,ibtn_next,ibtn_last;
+    private int currentBrushModel=AnyRTCBoardConfig.BrushModel.Graffiti;//当前画笔类型
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,14 +51,12 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
         anyRTCBoardView.setWhiteBoardListener(this);
         anyRTCBoardView.setImageLoader(new BoardmageLoader());
         List<String> imageList=new ArrayList<>();
-        imageList.add(Constans.IMAGE1);
-        imageList.add(Constans.IMAGE2);
-        imageList.add(Constans.IMAGE3);
-        imageList.add(Constans.IMAGE4);
-        imageList.add(Constans.IMAGE5);
+        for (int i=1;i<28;i++){
+            imageList.add(String.format(Constans.IMAGE1,i+""));
+        }
         anyRTCBoardView.initWithRoomId(roomId, "88888888",isHost ? String.valueOf((Math.random()*9+1)*100000) : String.valueOf((Math.random()*9+1)*100000),imageList);
-        AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Graffiti);
-        updataPaintType();
+
+        AnyRTCBoardConfig.getInstance().setSwipe(true);//设置可滑动
     }
 
     @Override
@@ -161,62 +160,74 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 if (ll_tools.getVisibility()==View.VISIBLE){
                     ll_tools.setVisibility(View.GONE);
                     ibtnTools.setSelected(false);
+                    AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.None);
                 }else {
                     ll_tools.setVisibility(View.VISIBLE);
-                    popWidth.setVisibility(View.GONE);
-                    popColor.setVisibility(View.GONE);
-                    popModel.setVisibility(View.GONE);
                     ibtnTools.setSelected(true);
+                    AnyRTCBoardConfig.getInstance().setBrushModel(currentBrushModel);
                     updataPaintType();
                 }
                 break;
             case R.id.ib_width_a:
                 AnyRTCBoardConfig.getInstance().setBrushWidth(12f);
                 popWidth.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_width_b:
                 AnyRTCBoardConfig.getInstance().setBrushWidth(16f);
                 popWidth.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_width_c:
                 AnyRTCBoardConfig.getInstance().setBrushWidth(20f);
                 popWidth.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_paint:
                 AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Graffiti);
+                currentBrushModel=AnyRTCBoardConfig.BrushModel.Graffiti;
                 popModel.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_line:
                 AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Line);
+                currentBrushModel=AnyRTCBoardConfig.BrushModel.Line;
                 popModel.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_rect:
                 AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Rect);
+                currentBrushModel=AnyRTCBoardConfig.BrushModel.Rect;
                 popModel.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_arrow:
                 AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Arrow);
+                currentBrushModel=AnyRTCBoardConfig.BrushModel.Arrow;
                 popModel.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_red:
                 AnyRTCBoardConfig.getInstance().setBrushColor("#FF3A35");
-                popColor.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_green:
                 AnyRTCBoardConfig.getInstance().setBrushColor("#2CC233");
                 popColor.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_blue:
                 AnyRTCBoardConfig.getInstance().setBrushColor("#0077FF");
                 popColor.setVisibility(View.GONE);
+                updataPaintType();
                 break;
             case R.id.ib_black:
                 AnyRTCBoardConfig.getInstance().setBrushColor("#000000");
                 popColor.setVisibility(View.GONE);
+                updataPaintType();
                 break;
-            case R.id.ib_white:
-                AnyRTCBoardConfig.getInstance().setBrushColor("#ffffff");
-                popColor.setVisibility(View.GONE);
+            case R.id.ibtn_exit:
+                finish();
                 break;
 
         }
@@ -224,7 +235,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
 
     private void updataPaintType() {
         Drawable drawable;
-        switch (AnyRTCBoardConfig.getInstance().getBrushModel()) {
+        switch (currentBrushModel) {
             case 1://涂鸦
                 drawable= getResources().getDrawable(R.drawable.img_paint_select);
                 drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
@@ -255,11 +266,6 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 break;
             case "#0077FF":
                 drawable= getResources().getDrawable(R.drawable.img_blue);
-                drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-                tvColor.setCompoundDrawables(null,drawable,null,null);
-                break;
-            case "#FFFFFF":
-                drawable= getResources().getDrawable(R.drawable.img_white);
                 drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
                 tvColor.setCompoundDrawables(null,drawable,null,null);
                 break;
@@ -310,12 +316,10 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
             popModel.setVisibility(View.VISIBLE);
             updataBrushModelType();
         }
-        ll_tools.setVisibility(View.GONE);
-        ibtnTools.setSelected(false);
     }
 
     private void updataBrushModelType() {
-        switch (AnyRTCBoardConfig.getInstance().getBrushModel()) {
+        switch (currentBrushModel) {
             case 1://涂鸦
                 ib_line.setSelected(false);
                 ib_paint.setSelected(true);

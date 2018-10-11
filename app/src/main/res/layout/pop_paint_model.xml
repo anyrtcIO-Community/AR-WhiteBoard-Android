@@ -10,28 +10,28 @@
 
     <ImageButton
         android:id="@+id/ib_paint"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:background="@null"
         android:onClick="btnOnclick"
         android:src="@drawable/select_paint"/>
     <ImageButton
         android:id="@+id/ib_line"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:background="@null"
         android:onClick="btnOnclick"
         android:src="@drawable/select_line"/>
     <ImageButton
         android:id="@+id/ib_rect"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:background="@null"
         android:onClick="btnOnclick"
         android:src="@drawable/select_rect"/>
     <ImageButton
         android:id="@+id/ib_arrow"
-        android:layout_width="35dp"
+        android:layout_width="50dp"
         android:layout_height="35dp"
         android:onClick="btnOnclick"
         android:background="@null"
