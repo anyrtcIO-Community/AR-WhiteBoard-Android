@@ -58,7 +58,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
             imageList.add(String.format(Constans.IMAGE1,i+""));
         }
         //初始化画板
-        anyRTCBoardView.initWithRoomId(roomId, "88888888",isHost ? String.valueOf((Math.random()*9+1)*100000) : String.valueOf((Math.random()*9+1)*100000),imageList);
+        anyRTCBoardView.initWithRoomId(roomId, "88888888",isHost ? BoardApplication.hostId : BoardApplication.joinerId,imageList);
         //设置画笔类型
         AnyRTCBoardConfig.getInstance().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync :AnyRTCBoardConfig.BrushModel.Transform);
     }
@@ -213,6 +213,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 break;
             case R.id.ib_red:
                 AnyRTCBoardConfig.getInstance().setBrushColor("#FF3A35");
+                popColor.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_green:
