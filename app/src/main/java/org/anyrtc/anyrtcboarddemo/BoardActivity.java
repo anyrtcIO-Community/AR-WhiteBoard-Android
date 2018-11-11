@@ -56,13 +56,11 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
         //设置图片加载器
         anyRTCBoardView.setImageLoader(new BoardmageLoader());
         List<String> imageList = new ArrayList<>();
-        for (int i = 1; i < 28; i++) {
-            imageList.add(String.format(Constans.IMAGE1, i + ""));
-        }
+            imageList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541580960526&di=db82ba9793e0f9b74dcd09521df39ed1&imgtype=0&src=http%3A%2F%2Fdown1.cnmo.com%2Fcnmo-app%2Fa192%2Fhaiyang.jpg");
         //初始化画板
-        anyRTCBoardView.initWithRoomId(roomId, "88888888", isHost ? BoardApplication.hostId : BoardApplication.joinerId, imageList);
+        anyRTCBoardView.initWithRoomId(roomId, "888881888", isHost ? BoardApplication.hostId : BoardApplication.joinerId, imageList);
         //设置画笔类型
-        AnyRTCBoardConfig.getInstance().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync : AnyRTCBoardConfig.BrushModel.Transform);
+        anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync : AnyRTCBoardConfig.BrushModel.Transform);
     }
 
     @Override
@@ -180,70 +178,70 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 if (ll_tools.getVisibility() == View.VISIBLE) {
                     ll_tools.setVisibility(View.GONE);
                     ibtnTools.setSelected(false);
-                    AnyRTCBoardConfig.getInstance().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync : AnyRTCBoardConfig.BrushModel.Transform);
+                    anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(isHost ? AnyRTCBoardConfig.BrushModel.TransformSync : AnyRTCBoardConfig.BrushModel.Transform);
                 } else {
                     ll_tools.setVisibility(View.VISIBLE);
                     ibtnTools.setSelected(true);
-                    AnyRTCBoardConfig.getInstance().setBrushModel(currentBrushModel);
+                    anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(currentBrushModel);
                     updataPaintType();
                 }
                 break;
             case R.id.ib_width_a:
-                AnyRTCBoardConfig.getInstance().setBrushWidth(12f);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushWidth(12f);
                 popWidth.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_width_b:
-                AnyRTCBoardConfig.getInstance().setBrushWidth(16f);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushWidth(16f);
                 popWidth.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_width_c:
-                AnyRTCBoardConfig.getInstance().setBrushWidth(20f);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushWidth(20f);
                 popWidth.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_paint:
-                AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Graffiti);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(AnyRTCBoardConfig.BrushModel.Graffiti);
                 currentBrushModel = AnyRTCBoardConfig.BrushModel.Graffiti;
                 popModel.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_line:
-                AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Line);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(AnyRTCBoardConfig.BrushModel.Line);
                 currentBrushModel = AnyRTCBoardConfig.BrushModel.Line;
                 popModel.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_rect:
-                AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Rect);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(AnyRTCBoardConfig.BrushModel.Rect);
                 currentBrushModel = AnyRTCBoardConfig.BrushModel.Rect;
                 popModel.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_arrow:
-                AnyRTCBoardConfig.getInstance().setBrushModel(AnyRTCBoardConfig.BrushModel.Arrow);
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushModel(AnyRTCBoardConfig.BrushModel.Arrow);
                 currentBrushModel = AnyRTCBoardConfig.BrushModel.Arrow;
                 popModel.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_red:
-                AnyRTCBoardConfig.getInstance().setBrushColor("#FF3A35");
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushColor("#FF3A35");
                 popColor.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_green:
-                AnyRTCBoardConfig.getInstance().setBrushColor("#2CC233");
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushColor("#2CC233");
                 popColor.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_blue:
-                AnyRTCBoardConfig.getInstance().setBrushColor("#0077FF");
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushColor("#0077FF");
                 popColor.setVisibility(View.GONE);
                 updataPaintType();
                 break;
             case R.id.ib_black:
-                AnyRTCBoardConfig.getInstance().setBrushColor("#000000");
+                anyRTCBoardView.getAnyRTCBoardConfig().setBrushColor("#000000");
                 popColor.setVisibility(View.GONE);
                 updataPaintType();
                 break;
@@ -279,7 +277,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 break;
         }
 
-        switch (AnyRTCBoardConfig.getInstance().getBrushColor().toUpperCase()) {
+        switch (anyRTCBoardView.getAnyRTCBoardConfig().getBrushColor().toUpperCase()) {
             case "#FF3A35":
                 drawable = getResources().getDrawable(R.drawable.img_red);
                 drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
@@ -307,11 +305,11 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
                 break;
         }
 
-        if (AnyRTCBoardConfig.getInstance().getBrushWidth() > 1 && AnyRTCBoardConfig.getInstance().getBrushWidth() <= 14) {
+        if (anyRTCBoardView.getAnyRTCBoardConfig().getBrushWidth() > 1 && anyRTCBoardView.getAnyRTCBoardConfig().getBrushWidth() <= 14) {
             drawable = getResources().getDrawable(R.drawable.img_paint_width_a);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             tvLineWidth.setCompoundDrawables(null, drawable, null, null);
-        } else if (AnyRTCBoardConfig.getInstance().getBrushWidth() > 14 && AnyRTCBoardConfig.getInstance().getBrushWidth() <= 18) {
+        } else if (anyRTCBoardView.getAnyRTCBoardConfig().getBrushWidth() > 14 && anyRTCBoardView.getAnyRTCBoardConfig().getBrushWidth() <= 18) {
             drawable = getResources().getDrawable(R.drawable.img_paint_width_b);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             tvLineWidth.setCompoundDrawables(null, drawable, null, null);
