@@ -8,12 +8,12 @@
 
 
 
-    <org.anyrtc.whiteboard.weight.AnyRTCBoardView
+    <org.anyrtc.whiteboard.weight.AnyRTCBoardTextureView
         android:id="@+id/any_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-      ></org.anyrtc.whiteboard.weight.AnyRTCBoardView>
+      ></org.anyrtc.whiteboard.weight.AnyRTCBoardTextureView>
     <LinearLayout
         android:layout_width="wrap_content"
         android:orientation="horizontal"

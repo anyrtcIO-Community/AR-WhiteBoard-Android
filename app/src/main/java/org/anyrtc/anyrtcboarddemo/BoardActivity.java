@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import org.anyrtc.whiteboard.boardevent.AnyRTCBoardListener;
 import org.anyrtc.whiteboard.utils.AnyRTCBoardConfig;
-import org.anyrtc.whiteboard.weight.AnyRTCBoardView;
+import org.anyrtc.whiteboard.weight.AnyRTCBoardTextureView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class BoardActivity extends AppCompatActivity implements AnyRTCBoardListe
 
     String roomId = "";
     boolean isHost;
-    AnyRTCBoardView anyRTCBoardView;
+    AnyRTCBoardTextureView anyRTCBoardView;
     ImageButton ibtnTools;
     TextView tvPaint, tvColor, tvLineWidth, tv_pageNum;
     LinearLayout ll_tools, popColor, popWidth, popModel;
