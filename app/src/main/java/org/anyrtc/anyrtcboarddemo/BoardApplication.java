@@ -17,7 +17,7 @@ public class BoardApplication extends Application{
     public void onCreate() {
         super.onCreate();
         //配置开发者信息
-        AnyRTCBoardEngine.Inst().initEngineWithAnyrtcInfo(Constans.DEVELOPERID, Constans.APPID, Constans.APPKEY, Constans.APPTOKEN);
+        AnyRTCBoardEngine.Inst().initEngineWithAnyrtcInfo(DeveloperInfo.DEVELOPERID, DeveloperInfo.APPID, DeveloperInfo.APPKEY, DeveloperInfo.APPTOKEN);
         AnyRTCBoardEngine.Inst().setDebugLog(true);
 
         hostId=(int)((Math.random()*9+1)*100000)+"";

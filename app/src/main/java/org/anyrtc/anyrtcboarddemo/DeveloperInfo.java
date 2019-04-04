@@ -3,7 +3,7 @@ package org.anyrtc.anyrtcboarddemo;
 /**
  * Created by liuxiaozhong on 2018/9/30.
  */
-public class Constans {
+public class DeveloperInfo {
 
     public final static String DEVELOPERID = "";
 
