@@ -9,7 +9,7 @@ ARBoard在线画板SDK，体积小，性能强，多端同步，API简单易用�
 
 ##### 扫码下载
 ![image](https://www.pgyer.com/app/qrcode/yhUN)
-##### [点击下载](https://www.pgyer.com/app/qrcode/yhUN)
+##### [点击下载](https://www.pgyer.com/yhUN)
 ##### [WEB在线体验](https://beyond.anyrtc.io/demo/whiteboard)
 
 ### SDK集成
