@@ -1,4 +1,4 @@
-package org.ar.anyrtcboarddemo;
+package org.ar.board;
 
 /**
  * Created by liuxiaozhong on 2018/9/30.

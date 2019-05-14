@@ -1,4 +1,4 @@
-package org.ar.anyrtcboarddemo;
+package org.ar.board;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
