@@ -18,7 +18,7 @@
             android:drawablePadding="10dp"
             android:layout_centerInParent="true"
             android:drawableTop="@drawable/img_logo"
-            android:text="anyRTC在线画板DEMO"
+            android:text="AR在线画板DEMO"
             android:textColor="#CCCCCC"
             android:textSize="12sp" />
 
