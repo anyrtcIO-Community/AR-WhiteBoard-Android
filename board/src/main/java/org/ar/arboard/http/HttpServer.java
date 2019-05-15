@@ -711,9 +711,7 @@ public class HttpServer extends BaseSocket {
         }
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("anyrtc_developerid", DevConfig.getInstance().getAnyrtc_developerid());
             jsonObject.put("anyrtc_appid", DevConfig.getInstance().getAnyrtc_appid());
-            jsonObject.put("anyrtc_appkey", DevConfig.getInstance().getAnyrtc_appkey());
             jsonObject.put("anyrtc_apptoken", DevConfig.getInstance().getAnyrtc_apptoken());
         } catch (JSONException e) {
             e.printStackTrace();

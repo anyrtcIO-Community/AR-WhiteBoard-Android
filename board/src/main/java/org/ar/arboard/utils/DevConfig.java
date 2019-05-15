@@ -7,11 +7,8 @@ import android.text.TextUtils;
  */
 public class DevConfig {
 
-    protected String anyrtc_developerid="";
 
     protected String anyrtc_appid="";
-
-    protected String anyrtc_appkey="";
 
     protected String anyrtc_apptoken="";
 
@@ -33,20 +30,12 @@ public class DevConfig {
         return instance;
     }
 
-    public void initARInfo(String strDeveloperId,String strAppId,String strAppKey,String strToken){
-        this.anyrtc_developerid=strDeveloperId;
+    public void initARInfo(String strAppId,String strToken){
         this.anyrtc_appid=strAppId;
-        this.anyrtc_appkey=strAppKey;
         this.anyrtc_apptoken=strToken;
     }
 
-    public String getAnyrtc_developerid() {
-        return anyrtc_developerid;
-    }
 
-    protected void setAnyrtc_developerid(String anyrtc_developerid) {
-        this.anyrtc_developerid = anyrtc_developerid;
-    }
 
     public String getAnyrtc_appid() {
         return anyrtc_appid;
@@ -56,13 +45,6 @@ public class DevConfig {
         this.anyrtc_appid = anyrtc_appid;
     }
 
-    public String getAnyrtc_appkey() {
-        return anyrtc_appkey;
-    }
-
-    protected void setAnyrtc_appkey(String anyrtc_appkey) {
-        this.anyrtc_appkey = anyrtc_appkey;
-    }
 
     public String getAnyrtc_apptoken() {
         return anyrtc_apptoken;
@@ -73,7 +55,7 @@ public class DevConfig {
     }
 
     public boolean DevInfoNotFull(){
-        return TextUtils.isEmpty(anyrtc_apptoken)||TextUtils.isEmpty(anyrtc_appkey)||TextUtils.isEmpty(anyrtc_appid)||TextUtils.isEmpty(anyrtc_developerid);
+        return TextUtils.isEmpty(anyrtc_apptoken)||TextUtils.isEmpty(anyrtc_appid);
     }
 
     public boolean isOpenLog() {
