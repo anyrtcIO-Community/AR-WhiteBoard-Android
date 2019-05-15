@@ -25,7 +25,7 @@ dependencies {
 //    implementation (project(':board')){
 //        exclude group: 'com.android.support'
 //    }
-    implementation ('org.ar:board:3.0.0'){
+    implementation ('org.ar:board:3.0.1'){
         exclude group: 'com.android.support'
     }
 }

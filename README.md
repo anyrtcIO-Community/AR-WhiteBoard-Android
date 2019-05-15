@@ -41,7 +41,7 @@ Android API 16+
 >如果您还未注册anyRTC开发者账号，请登录[anyRTC官网](http://www.anyrtc.io)注册及获取更多的帮助。
 
 ### 替换开发者账号
-在[anyRTC官网](http://www.anyrtc.io)获取了开发者账号，AppID等信息后，替换DEMO中
+在[anyRTC官网](http://www.anyrtc.io)获取了AppID等信息后，替换DEMO中
 DeveloperInfo 类中的开发者信息即可
 
 ### 操作步骤
