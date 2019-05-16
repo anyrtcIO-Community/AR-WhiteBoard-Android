@@ -1,4 +1,4 @@
-package org.ar.anyrtcboarddemo;
+package org.ar.board;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -59,7 +59,7 @@ public class BoardActivity extends AppCompatActivity implements ARBoardListener 
         imageList.add(DeveloperInfo.IMAGE1);
 //        imageList.add("#FF0000");//纯色背景添加这个格式的颜色代码
         //初始化画板
-        arBoardView.initWithRoomId(roomId, "888888888", isHost ? BoardApplication.hostId : BoardApplication.joinerId, imageList);
+        arBoardView.initWithRoomId(roomId, "88888888", isHost ? BoardApplication.hostId : BoardApplication.joinerId, imageList);
         //设置画笔类型
         arBoardView.getARBoardConfig().setBrushModel(isHost ? ARBoardConfig.BrushModel.TransformSync : ARBoardConfig.BrushModel.Transform);
     }

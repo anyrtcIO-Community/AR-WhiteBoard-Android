@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "org.ar.anyrtcboarddemo"
+        applicationId "org.ar.board"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 5
@@ -16,15 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.github.bumptech.glide:glide:4.3.1'
-//    implementation (project(':board')){
-//        exclude group: 'com.android.support'
-//    }
     implementation ('org.ar:board:3.0.1'){
         exclude group: 'com.android.support'
     }
