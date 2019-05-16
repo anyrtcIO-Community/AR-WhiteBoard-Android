@@ -5,11 +5,9 @@ package org.ar.board;
  */
 public class DeveloperInfo {
 
-    public final static String DEVELOPERID = "95878050";
 
     public final static String APPID = "anyrtcBO6kElS14kjS";
 
-    public final static String APPKEY = "J/m2NjA26ypnW5C9eUmKP6zTyTwY3dZ0Fz3wxPZ+I6Y";
 
     public final static String APPTOKEN = "2572604a08e238bd2a749318900e16c4";
 
