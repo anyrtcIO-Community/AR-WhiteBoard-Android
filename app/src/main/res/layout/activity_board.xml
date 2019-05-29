@@ -90,6 +90,7 @@
         android:orientation="vertical"
         android:layout_width="52dp"
         android:visibility="gone"
+        android:clickable="true"
         android:background="#333333"
         android:gravity="center"
         android:layout_height="match_parent">
