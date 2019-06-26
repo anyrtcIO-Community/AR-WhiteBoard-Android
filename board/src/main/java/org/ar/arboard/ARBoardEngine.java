@@ -20,9 +20,9 @@ public class ARBoardEngine {
     private ARBoardEngine() {
     }
 
-    public void initEngineWithARInfo(final String strAppId,
-                                       final String strToken) {
-        DevConfig.getInstance().initARInfo(strAppId,strToken);
+    public void initEngineWithARInfo(final String appId,
+                                       final String token) {
+        DevConfig.getInstance().initARInfo(appId,token);
     }
 
     public String getSdkVersion() {
