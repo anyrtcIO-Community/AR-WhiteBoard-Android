@@ -204,18 +204,18 @@ public class ARBoardView extends FrameLayout {
     }
 
 
-    public void initWithRoomId(String anyRTCId, String fileId, String userId, List<String> imageList) {
-        if (TextUtils.isEmpty(anyRTCId) || TextUtils.isEmpty(fileId) || TextUtils.isEmpty(userId) || imageList.size() == 0) {
+    public void initWithRoomId(String roomId, String fileId, String userId, List<String> imageList) {
+        if (TextUtils.isEmpty(roomId) || TextUtils.isEmpty(fileId) || TextUtils.isEmpty(userId) || imageList.size() == 0) {
             LogUtil.d("initWithRoomId", "初始化失败，请检查初始化参数是否为空");
             whiteBoardListener.onBoardError(ARBoardCode.ParameterEmpty.code);
             return;
         }
-        if (!anyRTCId.matches("^[A-Za-z0-9]+$")||!fileId.matches("^[A-Za-z0-9]+$")||!userId.matches("^[A-Za-z0-9]+$")){
+        if (!roomId.matches("^[A-Za-z0-9]+$")||!fileId.matches("^[A-Za-z0-9]+$")||!userId.matches("^[A-Za-z0-9]+$")){
             LogUtil.d("initWithRoomId", "参数不合法");
             whiteBoardListener.onBoardError(ARBoardCode.ParameterError.code);
             return;
         }
-        this.TEMPanyRTCId = anyRTCId;
+        this.TEMPanyRTCId = roomId;
         this.TEMPfileId = fileId;
         this.TEMPuserId = userId;
         this.TEMPimageList = imageList;
@@ -227,7 +227,7 @@ public class ARBoardView extends FrameLayout {
 
     }
 
-    private void initBoard(String anyRTCId, String fileId, String userId, List<String> imageList) {
+    private void initBoard(String roomId, String fileId, String userId, List<String> imageList) {
         JSONArray boardArray = new JSONArray();
         for (int i = 0; i < imageList.size(); i++) {
             try {
@@ -239,12 +239,12 @@ public class ARBoardView extends FrameLayout {
                 e.printStackTrace();
             }
         }
-        httpServer.initAllBoard(fileId, anyRTCId, boardArray, userId);
+        httpServer.initAllBoard(fileId, roomId, boardArray, userId);
     }
 
 
-    public void setWhiteBoardListener(ARBoardListener whiteBoardListener) {
-        this.whiteBoardListener = whiteBoardListener;
+    public void setWhiteBoardListener(ARBoardListener arBoardListener) {
+        this.whiteBoardListener = arBoardListener;
     }
 
 

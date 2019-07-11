@@ -17,7 +17,7 @@ public class BoardApplication extends Application{
     public void onCreate() {
         super.onCreate();
         //配置开发者信息
-        ARBoardEngine.Inst().initEngineWithARInfo(DeveloperInfo.APPID,  DeveloperInfo.APPTOKEN);
+        ARBoardEngine.Inst().initEngine(DeveloperInfo.APPID,  DeveloperInfo.APPTOKEN);
         ARBoardEngine.Inst().setDebugLog(true);
 
         hostId=(int)((Math.random()*9+1)*100000)+"";
