@@ -8,6 +8,8 @@ import org.ar.arboard.utils.DevConfig;
  */
 public class ARBoardEngine {
 
+    public int port=2662;
+    public String address="board.anyrtc.cc";
 
     private static class SingletonHolder {
         private static final ARBoardEngine INSTANCE = new ARBoardEngine();
@@ -23,6 +25,11 @@ public class ARBoardEngine {
     public void initEngine(final String appId,
                                        final String token) {
         DevConfig.getInstance().initARInfo(appId,token);
+    }
+
+    public void configServerForPriCloud(final String strAddr, final int nPort) {
+        this.address=strAddr;
+        this.port=nPort;
     }
 
     public String getSdkVersion() {

@@ -2,6 +2,7 @@ package org.ar.arboard.http;
 
 import com.google.gson.Gson;
 
+import org.ar.arboard.ARBoardEngine;
 import org.ar.arboard.utils.LogUtil;
 import org.ar.arboard.boardevent.WhiteBoardServerListener;
 
@@ -22,9 +23,8 @@ public class BaseSocket {
     protected Socket socket;
 
     protected WhiteBoardServerListener whiteBoardServerListener;
-        private final static String SERVER_URL= "http://board.anyrtc.cc:2662";
-//private final static String SERVER_URL= "http://192.168.1.111:2662";
-//    private final static String SERVER_URL = "http://192.168.1.112:2662";
+
+    private final static String SERVER_URL= String.format("http://%s:%s", ARBoardEngine.Inst().address,ARBoardEngine.Inst().port);
 
     public BaseSocket() throws URISyntaxException {
 
