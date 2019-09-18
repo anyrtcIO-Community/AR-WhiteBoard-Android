@@ -80,8 +80,8 @@ public class HttpServer extends BaseSocket {
         @Override
         public void call(Object... args) {
             LogUtil.d("验证开发者信息成功",args[0].toString());
-            arBoardConfig.setInitAnyrtcSuccess(true);
-            whiteBoardServerListener.initAnyRTCSuccess();
+            arBoardConfig.setInitSuccess(true);
+            whiteBoardServerListener.initAppInfoSuccess();
         }
     };
 
@@ -89,12 +89,12 @@ public class HttpServer extends BaseSocket {
         @Override
         public void call(Object... args) {
             LogUtil.d("验证开发者信息失败",args[0].toString());
-            arBoardConfig.setInitAnyrtcSuccess(false);
+            arBoardConfig.setInitSuccess(false);
             JSONObject jsonObject = null;
             try {
                 jsonObject = new JSONObject(args[0].toString());
                 int code = jsonObject.getInt("code");
-                whiteBoardServerListener.initAnyRTCFaild(code);
+                whiteBoardServerListener.initAppInfoFaild(code);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -705,14 +705,14 @@ public class HttpServer extends BaseSocket {
         socket.emit("destroy_board", jsonObject.toString());
     }
 
-    public void initAnyRTC() {
+    public void init() {
         if (DevConfig.getInstance().DevInfoNotFull()) {
             throw new IllegalArgumentException("画板未配置AnyRTC信息！");
         }
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("anyrtc_appid", DevConfig.getInstance().getAnyrtc_appid());
-            jsonObject.put("anyrtc_apptoken", DevConfig.getInstance().getAnyrtc_apptoken());
+            jsonObject.put("anyrtc_appid", DevConfig.getInstance().getappid());
+            jsonObject.put("anyrtc_apptoken", DevConfig.getInstance().getapptoken());
         } catch (JSONException e) {
             e.printStackTrace();
         }

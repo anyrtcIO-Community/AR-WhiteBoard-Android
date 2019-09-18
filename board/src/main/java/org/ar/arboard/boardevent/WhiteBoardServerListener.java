@@ -14,9 +14,9 @@ public abstract class WhiteBoardServerListener {
 
     public abstract void switchPage(int currentPage,boolean isInit);
 
-    public abstract void initAnyRTCSuccess();
+    public abstract void initAppInfoSuccess();
 
-    public abstract void initAnyRTCFaild(int code);
+    public abstract void initAppInfoFaild(int code);
 
     public abstract void onAddBoardSuccess(List<String> imageUrl,int curPageNum,boolean isAdd);
 

@@ -24,7 +24,7 @@ public class ARBoardConfig {
 
     public float mBoardHeight;
 
-    public boolean isInitAnyrtcSuccess = false;
+    public boolean isInitSuccess = false;
 
     public boolean isSwipe=false;
 
@@ -114,12 +114,12 @@ public class ARBoardConfig {
         this.mBoardHeight = mBoardHeight;
     }
 
-    public boolean isInitAnyrtcSuccess() {
-        return isInitAnyrtcSuccess;
+    public boolean isInitSuccess() {
+        return isInitSuccess;
     }
 
-    public void setInitAnyrtcSuccess(boolean initAnyrtcSuccess) {
-        isInitAnyrtcSuccess = initAnyrtcSuccess;
+    public void setInitSuccess(boolean initSuccess) {
+        isInitSuccess = initSuccess;
     }
 
 

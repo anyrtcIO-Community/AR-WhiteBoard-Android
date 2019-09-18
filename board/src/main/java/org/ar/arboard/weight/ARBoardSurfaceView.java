@@ -66,7 +66,7 @@ public class ARBoardSurfaceView extends FrameLayout {
 
     private boolean switchHadEnd = true;
 
-    private String TEMPanyRTCId, TEMPfileId, TEMPuserId;
+    private String TEMPRoomId, TEMPfileId, TEMPuserId;
 
     private List<String> TEMPimageList;
 
@@ -166,7 +166,7 @@ public class ARBoardSurfaceView extends FrameLayout {
             @Override
             public void boardWDChange(int width, int height) {
                 Log.d("--------------", "boardWDChange " + width + "boardWDChange" + height);
-                httpServer.initAnyRTC();
+                httpServer.init();
             }
         });
 
@@ -207,30 +207,30 @@ public class ARBoardSurfaceView extends FrameLayout {
     }
 
 
-    public void initWithRoomId(String anyRTCId, String fileId, String userId, List<String> imageList) {
-        if (TextUtils.isEmpty(anyRTCId) || TextUtils.isEmpty(fileId) || TextUtils.isEmpty(userId) || imageList.size() == 0) {
+    public void initWithRoomId(String roomId, String fileId, String userId, List<String> imageList) {
+        if (TextUtils.isEmpty(roomId) || TextUtils.isEmpty(fileId) || TextUtils.isEmpty(userId) || imageList.size() == 0) {
             LogUtil.d("initWithRoomId", "初始化失败，请检查初始化参数是否为空");
             whiteBoardListener.onBoardError(ARBoardCode.ParameterEmpty.code);
             return;
         }
-        if (!anyRTCId.matches("^[A-Za-z0-9]+$")||!fileId.matches("^[A-Za-z0-9]+$")||!userId.matches("^[A-Za-z0-9]+$")){
+        if (!roomId.matches("^[A-Za-z0-9]+$")||!fileId.matches("^[A-Za-z0-9]+$")||!userId.matches("^[A-Za-z0-9]+$")){
             LogUtil.d("initWithRoomId", "参数不合法");
             whiteBoardListener.onBoardError(ARBoardCode.ParameterError.code);
             return;
         }
-        this.TEMPanyRTCId = anyRTCId;
+        this.TEMPRoomId = roomId;
         this.TEMPfileId = fileId;
         this.TEMPuserId = userId;
         this.TEMPimageList = imageList;
         paintView.Clean();
         hadSetData=true;
        if (hadCheckAnyInfo){
-           initBoard(TEMPanyRTCId, TEMPfileId, TEMPuserId, TEMPimageList);
+           initBoard(TEMPRoomId, TEMPfileId, TEMPuserId, TEMPimageList);
        }
 
     }
 
-    private void initBoard(String anyRTCId, String fileId, String userId, List<String> imageList) {
+    private void initBoard(String roomId, String fileId, String userId, List<String> imageList) {
         JSONArray boardArray = new JSONArray();
         for (int i = 0; i < imageList.size(); i++) {
             try {
@@ -242,7 +242,7 @@ public class ARBoardSurfaceView extends FrameLayout {
                 e.printStackTrace();
             }
         }
-        httpServer.initAllBoard(fileId, anyRTCId, boardArray, userId);
+        httpServer.initAllBoard(fileId, roomId, boardArray, userId);
     }
 
 
@@ -460,21 +460,21 @@ public class ARBoardSurfaceView extends FrameLayout {
         }
 
         @Override
-        public void initAnyRTCSuccess() {
+        public void initAppInfoSuccess() {
             if (arBoardConfig !=null) {
-                arBoardConfig.setInitAnyrtcSuccess(true);
+                arBoardConfig.setInitSuccess(true);
             }
             hadCheckAnyInfo=true;
             if (hadSetData){
-                initBoard(TEMPanyRTCId, TEMPfileId, TEMPuserId, TEMPimageList);
+                initBoard(TEMPRoomId, TEMPfileId, TEMPuserId, TEMPimageList);
             }
 
         }
 
         @Override
-        public void initAnyRTCFaild(int code) {
+        public void initAppInfoFaild(int code) {
             if (arBoardConfig !=null) {
-                arBoardConfig.setInitAnyrtcSuccess(false);
+                arBoardConfig.setInitSuccess(false);
             }
             if (whiteBoardListener!=null) {
                 whiteBoardListener.onBoardError(code);

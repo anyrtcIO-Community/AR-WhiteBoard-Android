@@ -65,7 +65,7 @@ public class ARBoardView extends FrameLayout {
 
     private boolean switchHadEnd = true;
 
-    private String TEMPanyRTCId, TEMPfileId, TEMPuserId;
+    private String TEMPRoomId, TEMPfileId, TEMPuserId;
 
     private List<String> TEMPimageList;
 
@@ -163,7 +163,7 @@ public class ARBoardView extends FrameLayout {
             @Override
             public void boardWDChange(int width, int height) {
                 Log.d("--------------", "boardWDChange " + width + "boardWDChange" + height);
-                httpServer.initAnyRTC();
+                httpServer.init();
             }
         });
 
@@ -215,14 +215,14 @@ public class ARBoardView extends FrameLayout {
             whiteBoardListener.onBoardError(ARBoardCode.ParameterError.code);
             return;
         }
-        this.TEMPanyRTCId = roomId;
+        this.TEMPRoomId = roomId;
         this.TEMPfileId = fileId;
         this.TEMPuserId = userId;
         this.TEMPimageList = imageList;
         paintView.Clean();
         hadSetData=true;
        if (hadCheckAnyInfo){
-           initBoard(TEMPanyRTCId, TEMPfileId, TEMPuserId, TEMPimageList);
+           initBoard(TEMPRoomId, TEMPfileId, TEMPuserId, TEMPimageList);
        }
 
     }
@@ -461,21 +461,21 @@ public class ARBoardView extends FrameLayout {
         }
 
         @Override
-        public void initAnyRTCSuccess() {
+        public void initAppInfoSuccess() {
             if (arBoardConfig !=null) {
-                arBoardConfig.setInitAnyrtcSuccess(true);
+                arBoardConfig.setInitSuccess(true);
             }
             hadCheckAnyInfo=true;
             if (hadSetData){
-                initBoard(TEMPanyRTCId, TEMPfileId, TEMPuserId, TEMPimageList);
+                initBoard(TEMPRoomId, TEMPfileId, TEMPuserId, TEMPimageList);
             }
 
         }
 
         @Override
-        public void initAnyRTCFaild(int code) {
+        public void initAppInfoFaild(int code) {
             if (arBoardConfig !=null) {
-                arBoardConfig.setInitAnyrtcSuccess(false);
+                arBoardConfig.setInitSuccess(false);
             }
             if (whiteBoardListener!=null) {
                 whiteBoardListener.onBoardError(code);

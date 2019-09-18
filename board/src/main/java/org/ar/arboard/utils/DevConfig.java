@@ -8,9 +8,9 @@ import android.text.TextUtils;
 public class DevConfig {
 
 
-    protected String anyrtc_appid="";
+    protected String appid="";
 
-    protected String anyrtc_apptoken="";
+    protected String apptoken="";
 
     protected boolean isOpenLog=true;
 
@@ -31,31 +31,31 @@ public class DevConfig {
     }
 
     public void initARInfo(String strAppId,String strToken){
-        this.anyrtc_appid=strAppId;
-        this.anyrtc_apptoken=strToken;
+        this.appid=strAppId;
+        this.apptoken=strToken;
     }
 
 
 
-    public String getAnyrtc_appid() {
-        return anyrtc_appid;
+    public String getappid() {
+        return appid;
     }
 
-    protected void setAnyrtc_appid(String anyrtc_appid) {
-        this.anyrtc_appid = anyrtc_appid;
+    protected void setappid(String appid) {
+        this.appid = appid;
     }
 
 
-    public String getAnyrtc_apptoken() {
-        return anyrtc_apptoken;
+    public String getapptoken() {
+        return apptoken;
     }
 
-    protected void setAnyrtc_apptoken(String anyrtc_apptoken) {
-        this.anyrtc_apptoken = anyrtc_apptoken;
+    protected void setapptoken(String apptoken) {
+        this.apptoken = apptoken;
     }
 
     public boolean DevInfoNotFull(){
-        return TextUtils.isEmpty(anyrtc_apptoken)||TextUtils.isEmpty(anyrtc_appid);
+        return TextUtils.isEmpty(apptoken)||TextUtils.isEmpty(appid);
     }
 
     public boolean isOpenLog() {
