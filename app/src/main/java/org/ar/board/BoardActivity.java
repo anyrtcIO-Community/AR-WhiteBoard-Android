@@ -56,8 +56,8 @@ public class BoardActivity extends AppCompatActivity implements ARBoardListener 
         //设置图片加载器
         arBoardView.setImageLoader(new BoardmageLoader());
         List<String> imageList = new ArrayList<>();
-        imageList.add(DeveloperInfo.IMAGE1);
-//        imageList.add("#FF0000");//纯色背景添加这个格式的颜色代码
+//        imageList.add(DeveloperInfo.IMAGE1);
+        imageList.add("#FFFFFF");//纯色背景添加这个格式的颜色代码!!!!!!不可为空！！！！！
         //初始化画板
         arBoardView.initWithRoomId(roomId, "88888888", isHost ? BoardApplication.hostId : BoardApplication.joinerId, imageList);
         //设置画笔类型
