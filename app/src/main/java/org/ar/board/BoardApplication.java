@@ -18,6 +18,7 @@ public class BoardApplication extends Application{
         super.onCreate();
         //配置开发者信息
         ARBoardEngine.Inst().initEngine(DeveloperInfo.APPID,  DeveloperInfo.APPTOKEN);
+        ARBoardEngine.Inst().configServerForPriCloud("board.anyrtc.cc",2662,true);
         ARBoardEngine.Inst().setDebugLog(true);
 
         hostId=(int)((Math.random()*9+1)*100000)+"";

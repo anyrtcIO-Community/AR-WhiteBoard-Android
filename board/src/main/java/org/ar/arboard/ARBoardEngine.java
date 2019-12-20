@@ -10,6 +10,7 @@ public class ARBoardEngine {
 
     public int port=2662;
     public String address="board.anyrtc.cc";
+    public boolean isHttps = false;
 
     private static class SingletonHolder {
         private static final ARBoardEngine INSTANCE = new ARBoardEngine();
@@ -30,6 +31,11 @@ public class ARBoardEngine {
     public void configServerForPriCloud(final String strAddr, final int nPort) {
         this.address=strAddr;
         this.port=nPort;
+    }
+    public void configServerForPriCloud(final String strAddr, final int nPort,final boolean isHttps) {
+        this.address=strAddr;
+        this.port=nPort;
+        this.isHttps=isHttps;
     }
 
     public String getSdkVersion() {

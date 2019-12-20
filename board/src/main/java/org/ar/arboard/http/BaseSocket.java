@@ -34,7 +34,7 @@ import okhttp3.OkHttpClient;
 
 public class BaseSocket {
 
-    private final static String SERVER_URL = String.format("https://%s:%s", ARBoardEngine.Inst().address, ARBoardEngine.Inst().port);
+    private final static String SERVER_URL = String.format(ARBoardEngine.Inst().isHttps ? "https://%s:%s": "http://%s:%s", ARBoardEngine.Inst().address, ARBoardEngine.Inst().port);
 
     public static Gson gson;
 
