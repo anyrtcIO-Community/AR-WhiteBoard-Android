@@ -103,13 +103,15 @@ public class ARBoardView extends FrameLayout {
 
     public void getCurrentSnapShotImage(final ARBoardScreenShotResult result) {
         final Bitmap cacheBitmapFromView = getCacheBitmapFromView(viewPager);
-        Canvas canvas = new Canvas(cacheBitmapFromView);
-        paintView.doDrawByScreenShot(canvas, new PaintTextureView.DrawByScreenShotListener() {
-            @Override
-            public void drawFinish() {
-                result.result(cacheBitmapFromView);
-            }
-        });
+        if (cacheBitmapFromView!=null) {
+            Canvas canvas = new Canvas(cacheBitmapFromView);
+            paintView.doDrawByScreenShot(canvas, new PaintTextureView.DrawByScreenShotListener() {
+                @Override
+                public void drawFinish() {
+                    result.result(cacheBitmapFromView);
+                }
+            });
+        }
     }
 
 

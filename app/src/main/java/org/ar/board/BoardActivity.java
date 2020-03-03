@@ -56,7 +56,7 @@ public class BoardActivity extends AppCompatActivity implements ARBoardListener 
         //设置图片加载器
         arBoardView.setImageLoader(new BoardmageLoader());
         List<String> imageList = new ArrayList<>();
-        for (int i=1;i<28;i++){
+        for (int i=1;i<16;i++){
             imageList.add(String.format(DeveloperInfo.IMAGE1,String.valueOf(i)));
         }
 
