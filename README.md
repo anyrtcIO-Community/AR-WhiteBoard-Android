@@ -1,3 +1,8 @@
+# 重要提醒
+anyRTC 对该版本已经不再维护，如需互动白板方案，请前往官网联系客服获取。
+
+**公司网址： [www.anyrtc.io](https://www.anyrtc.io)**
+
 
 # anyRTC画板SDK
 ### 简介
